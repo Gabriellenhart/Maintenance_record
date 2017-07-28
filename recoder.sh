@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Testa se a data recebida, no formato do MySQL, é válida ou não
+# testa se a data recebida, no formato do MySQL, é válida ou não
 checa_data(){
 [ $(echo "$1" | sed 's,[12][0-9]\{3\}/\(0[1-9]\|1[012]\)/\(0[1-9]\|[12][0-9]\|3[01]\),,') ] &&
 return 1 || return 0
@@ -19,7 +19,7 @@ read -n2 -p "/" mes
 read -n4 -p "/" ano
 echo
 			  
-#colocamos na variável aniver a data no formato do MySQL
+# variável  data no formato do MySQL
 data="$ano/$mes/$dia"
 echo
 				  
@@ -29,7 +29,7 @@ if [ "$ano" -o "$mes" -o "$dia" ];then
 checa_data "$data" || { echo "ERRO: Data de aniversário inválida";exit; }
 fi
 									    
-# não aceitamos nomes nulo
+# não pode haver  nomes nulo
 [ "$numero_patrimonio" ] || { echo "ERRO: nome inválido";exit; }
 								  
 read -p "Deseja Incluir (s/n)? "
